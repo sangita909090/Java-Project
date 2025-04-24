@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class SecureCurrencyConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Available Currencies: USD, EUR, GBP, INR, JPY");
+        System.out.print("Enter source currency (USD, EUR, GBP, INR, JPY): ");
+        String fromCurrency = scanner.next().toUpperCase();
+        
+        System.out.print("Enter target currency (USD, EUR, GBP, INR, JPY): ");
+        String toCurrency = scanner.next().toUpperCase();
+        
+        System.out.print("Enter amount: ");
+        
+        if (!scanner.hasNextDouble()) {
+            System.out.println("Invalid amount! Please enter a numeric value.");
+            scanner.close();
+            return;
+        }
+        
+        double amount = scanner.nextDouble();
+        if (amount <= 0) {
+            System.out.println("Amount must be greater than zero.");
+            scanner.close();
+            return;
+        }
+        
+        double convertedAmount = 0;
+        final double TRANSACTION_FEE_PERCENTAGE = 2.0; // 2% transaction fee
+        
+        // Conversion rates (assumed based on 1 USD)
+        double usdToInr = 83.2, usdToEur = 0.91, usdToGbp = 0.78, usdToJpy = 149.5;
+
+        // Convert source currency to USD
+        switch (fromCurrency) {
+            case "USD": convertedAmount = amount; break;
+            case "INR": convertedAmount = amount / usdToInr; break;
+            case "EUR": convertedAmount = amount / usdToEur; break;
+            case "GBP": convertedAmount = amount / usdToGbp; break;
+            case "JPY": convertedAmount = amount / usdToJpy; break;
+            default:
+                System.out.println("Invalid source currency!");
+                scanner.close();
+                return;
+        }
+
+        // Convert USD to target currency
+        switch (toCurrency) {
+            case "USD": break;
+            case "INR": convertedAmount *= usdToInr; break;
+            case "EUR": convertedAmount *= usdToEur; break;
+            case "GBP": convertedAmount *= usdToGbp; break;
+            case "JPY": convertedAmount *= usdToJpy; break;
+            default:
+                System.out.println("Invalid target currency!");
+                scanner.close();
+                return;
+        }
+        
+        double taxAmount = (convertedAmount * TRANSACTION_FEE_PERCENTAGE) / 100;
+        convertedAmount -= taxAmount;
+        
+        System.out.printf("After %,.2f%% transaction fee, %.2f %s = %.2f %s\n", TRANSACTION_FEE_PERCENTAGE, amount, fromCurrency, convertedAmount, toCurrency);
+        
+        scanner.close();
+    }
+}
