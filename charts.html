@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rate Charts - ExchangeKaro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-exchange-alt"></i>ExchangeKaro</h1>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li><a href="charts.html" class="active">Charts</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="auth-links" id="login-link"><a href="login.html">Login</a></li>
+                    <li class="auth-links" id="signup-link"><a href="signup.html">Sign Up</a></li>
+                    <li class="auth-links hidden" id="logout-link"><a href="#" id="logout-button">Logout</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="charts-section">
+        <div class="container">
+            <h2 class="section-title">Exchange Rate Charts</h2>
+            
+            <div class="chart-controls">
+                <div class="form-group">
+                    <label for="chart-base-currency">Base Currency</label>
+                    <select id="chart-base-currency">
+                        <!-- Will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="chart-target-currency">Target Currency</label>
+                    <select id="chart-target-currency">
+                        <!-- Will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="chart-period">Time Period</label>
+                    <select id="chart-period">
+                        <option value="7">7 Days</option>
+                        <option value="14">14 Days</option>
+                        <option value="30" selected>30 Days</option>
+                        <option value="90">90 Days</option>
+                    </select>
+                </div>
+                <button id="update-chart-btn" class="btn btn-primary">Update Chart</button>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="rate-chart"></canvas>
+            </div>
+            
+            <div class="chart-info" id="chart-info">
+                <div class="current-rate">
+                    <h3>Current Rate</h3>
+                    <div class="rate-value" id="current-rate-value">Loading...</div>
+                </div>
+                <div class="rate-change">
+                    <h3>Rate Change</h3>
+                    <div class="change-value" id="rate-change-value">Loading...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-exchange-alt"></i> ExchangeKaro</h2>
+                    <p>Fast & reliable currency conversion</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="converter.html">Converter</a></li>
+                        <li><a href="charts.html">Charts</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ExchangeKaro. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>

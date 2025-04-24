@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currex - Currency Converter</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-exchange-alt"></i>ExchangeKaro</h1>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li><a href="charts.html">Charts</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="auth-links" id="login-link"><a href="login.html">Login</a></li>
+                    <li class="auth-links" id="signup-link"><a href="signup.html">Sign Up</a></li>
+                    <li class="auth-links hidden" id="logout-link"><a href="#" id="logout-button">Logout</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Fast & Reliable Currency Conversion</h1>
+                <p>Convert between 160+ currencies with real-time exchange rates</p>
+                <div class="hero-buttons">
+                    <a href="converter.html" class="btn btn-primary">Start Converting</a>
+                    <a href="signup.html" class="btn btn-secondary" id="hero-signup-btn">Sign Up Free</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="250" cy="250" r="200" fill="#f0f8ff" />
+                    <text x="170" y="200" font-family="Arial" font-size="40" fill="#2c3e50">$</text>
+                    <text x="220" y="250" font-family="Arial" font-size="40" fill="#3498db">€</text>
+                    <text x="270" y="300" font-family="Arial" font-size="40" fill="#2ecc71">£</text>
+                    <text x="190" y="320" font-family="Arial" font-size="40" fill="#e74c3c">¥</text>
+                    <path d="M150,250 C200,180 300,180 350,250" stroke="#3498db" stroke-width="6" fill="none"/>
+                    <path d="M150,270 C200,340 300,340 350,270" stroke="#2ecc71" stroke-width="6" fill="none"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose ExchangeKaro?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Real-time Rates</h3>
+                    <p>Access up-to-the-minute exchange rates from reliable sources</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-history"></i>
+                    <h3>Conversion History</h3>
+                    <p>Keep track of your recent currency conversions</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Rate Trends</h3>
+                    <p>Visualize exchange rate trends with interactive charts</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Friendly</h3>
+                    <p>Convert currencies on any device, anywhere, anytime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create an Account</h3>
+                    <p>Sign up for free to access all features and save your conversion history</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Select Currencies</h3>
+                    <p>Choose from 160+ currencies for your conversion needs</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Instant Results</h3>
+                    <p>View your conversion result instantly with the latest exchange rates</p>
+                </div>
+            </div>
+            <div class="cta-center">
+                <a href="converter.html" class="btn btn-primary">Try It Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-exchange-alt"></i>ExchangeKaro</h2>
+                    <p>Fast & reliable currency conversion</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="converter.html">Converter</a></li>
+                        <li><a href="charts.html">Charts</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ExchangeKaro. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>
